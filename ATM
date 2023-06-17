@@ -1,0 +1,55 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace code4_ATM_
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Enter the Number:");
+            double num = Convert.ToDouble(Console.ReadLine());
+
+            int n_5000 = 0, n_1000 = 0, n_500 = 0, n_100 = 0;
+
+            if (num % 100 == 0)
+            {
+                while (num > 0)
+                {
+                    if (num > 5000)
+                    {
+                        n_5000 = (int)num / 5000;
+                        num = num - (n_5000 * 5000);
+                    }
+                    else if(num > 1000){
+                        n_1000 = (int)num / 1000;
+                        num = num - (n_1000 * 1000);
+
+                    }else if (num > 500)
+                    {
+                        n_500 = (int)num / 500;
+                        num = num - (n_500 * 500);
+                    }
+                    else
+                    {
+                        n_100 = (int)num / 100;
+                        num = num - (n_100 * 100);
+                    }
+                }
+                Console.WriteLine("5000.00 x" + n_5000);
+                Console.WriteLine("1000.00 x" + n_1000);
+                Console.WriteLine("500.00 x" + n_500);
+                Console.WriteLine("100.00 x" + n_100);
+            }
+            else
+            {
+                Console.WriteLine("Invalid Number");
+               
+            }
+            Console.ReadKey();
+        }
+    }
+}
